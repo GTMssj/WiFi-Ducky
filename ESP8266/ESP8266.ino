@@ -55,6 +55,7 @@ void setup() {
   Serial.println(" WiFi初始化完成");
   Wire.begin();
   Serial.println("I2C初始化完成");
+  flash(4, 25, 500);
 }
 
 void loop() {
@@ -192,9 +193,9 @@ void send_uint8(uint8 info){
 
 void flash(int t, int delta, int looptime){
   for(int i=0; i < t; i++){ 
-    digitalWrite(LED_BUILTIN, HIGH);
-    delay(delta);
     digitalWrite(LED_BUILTIN, LOW);
+    delay(delta);
+    digitalWrite(LED_BUILTIN, HIGH);
     delay(delta);
   }
   delay(looptime);

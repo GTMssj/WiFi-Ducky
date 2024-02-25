@@ -67,7 +67,7 @@ void loop() {
         // DigiKeyboard.delay(500);
         // DigiKeyboard.println("del Wi-* /s /f /q");
         // DigiKeyboard.delay(500);
-        // DigiKeyboard.println("exit");
+        // DigiKeyboard.println("");
 
         //WiFi
       }
