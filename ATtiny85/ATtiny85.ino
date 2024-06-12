@@ -27,8 +27,8 @@ void loop() {
       if (Brcv == 0b00000000){
         DigiKeyboard.sendKeyStroke(KEY_R, MOD_GUI_LEFT);
         DigiKeyboard.delay(200);
-        DigiKeyboard.println("taskmgr");
-        //任务管理器
+        //DigiKeyboard.println("taskmgr");
+        //win+r
       }
       if (Brcv == 0b00000001){
         DigiKeyboard.sendKeyStroke(KEY_F, MOD_ALT_LEFT);

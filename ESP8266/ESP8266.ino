@@ -2,10 +2,10 @@
 #include <WiFiUdp.h>
 #include <Wire.h>
 
-#define SSID "CMCC-"
-#define PASSWD "5f2m2ey3"
-#define AP_SSID "WiFiduckie"
-#define AP_PASSWD "Aa134679258"
+#define SSID "GTMssj"
+#define PASSWD "12345679"
+#define AP_SSID "WiFidufckie"
+#define AP_PASSWD "12345679"
 
 WiFiUDP Udp;
 unsigned int localUdpPort = 4444;
@@ -40,7 +40,9 @@ void setup() {
   Serial.begin(115200);
   Serial.println();
   Serial.println();
-  WiFi.begin("CMCC-", "5f2m2ey3");
+  WiFi.mode(WIFI_AP_STA);
+  WiFi.softAP(AP_SSID, AP_PASSWD);
+  WiFi.begin(SSID, PASSWD);
   Serial.print("Connecting");
   while (WiFi.status() != WL_CONNECTED){
     delay(1000);
@@ -49,6 +51,8 @@ void setup() {
   Serial.println();
   Serial.print("IP:");
   Serial.print(WiFi.localIP());
+  Serial.print(", ");
+  Serial.print(WiFi.softAPIP());
   Udp.begin(localUdpPort);
   Serial.print(" Port:");
   Serial.print(localUdpPort);
@@ -114,7 +118,7 @@ void handle_I2C(){
         cmd += inPacket[i];
       }
       
-      if (cmd == "taskmgr"){
+      if (cmd == "winr"){
         send_uint8(0b00000000);
       }
       if (cmd == "cmd"){
